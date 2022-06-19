@@ -9,7 +9,7 @@ const cors = require("cors");
 const app = express();
 
 //settings
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 //middlewares
 app.use(morgan("dev"));
