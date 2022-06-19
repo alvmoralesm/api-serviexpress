@@ -8,6 +8,9 @@ const morgan = require("morgan");
 const cors = require("cors");
 const app = express();
 
+//local imports
+const serviciosRoutes = require("./src/routes/servicios");
+
 //settings
 const port = process.env.PORT || 3000;
 
@@ -25,6 +28,9 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+//routes
+app.use(serviciosRoutes);
 
 //run server
 app.listen(port, () => {
